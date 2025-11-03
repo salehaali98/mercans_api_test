@@ -13,7 +13,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected DashboardPage dashboardPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -25,7 +25,8 @@ public class BaseTest {
         loginPage.open();
     }
 
-    @AfterMethod
+
+    @AfterClass
     public void tearDown() {
         if (driver != null) {
             driver.quit();

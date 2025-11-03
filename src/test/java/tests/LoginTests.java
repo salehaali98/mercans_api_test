@@ -11,14 +11,18 @@ import javax.sql.rowset.spi.SyncFactoryException;
 public class LoginTests extends BaseTest {
 
     @Test(priority = 1)
-    public void testValidLogin() {
-        loginPage.enterUsername();
-        loginPage.enterPassword();
-        loginPage.clickLogin();
+    public void testValidLoginWithEmployee() throws InterruptedException {
+        loginPage.enterUsername("EMPLOYEEUSERNAME");
+        loginPage.enterPassword("EMPLOYEEPASSWORD");
+        dashboardPage = loginPage.clickLogin();
         String url = driver.getCurrentUrl();
         System.out.println("Current URL: " + url);
         String title = driver.getTitle();
         System.out.println("Page title: " + title);
         Assert.assertTrue(dashboardPage.isDashboardDisplayed());
+        loginPage = dashboardPage.signOut();
+
     }
+
+
 }

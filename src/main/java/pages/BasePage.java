@@ -1,5 +1,6 @@
 package pages;
 
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,10 +12,13 @@ import utilities.ConfigReader;
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
+    public By profileIcon = By.xpath("//div[@class='profile-menu__toggle profile-menu__toggle--expanded']");
+    public By signoutBtn = By.xpath("//div[@class='profile-dropdown__sign-out']");
+
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     public void open() {
@@ -34,6 +38,21 @@ public class BasePage {
                     ", id: " + element.getAttribute("id") +
                     ", type: " + element.getAttribute("type"));
         });
+    }
+
+    public void clickProfileIcon(){
+        WebElement profileButton = wait.until(ExpectedConditions.elementToBeClickable(profileIcon));
+        profileButton.click();
+    }
+
+    public LoginPage signOut() throws InterruptedException {
+//        Thread.sleep(1000);
+//        WebElement profileButton = wait.until(ExpectedConditions.visibilityOfElementLocated(profileIcon));
+//        profileButton.click();
+        Thread.sleep(5000);
+        WebElement signOutButton = wait.until(ExpectedConditions.visibilityOfElementLocated(signoutBtn));
+        signOutButton.click();
+        return new LoginPage(driver);
     }
 
 }
