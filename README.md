@@ -59,9 +59,7 @@ Adjust element locators (e.g., XPaths) if the dashboard UI changes.
 Project Structure
 
 MercansTest/
-│
 ├── .idea/
-│
 ├── src/
 │   ├── main/
 │   │   ├── java/
@@ -80,11 +78,9 @@ MercansTest/
 │       │   └── tests/
 │       │       ├── DashboardTests.java
 │       │       └── LoginTests.java
+│       │
 │       └── resources/
-│           └── testng.xml
-│
 ├── target/
-│
 ├── .env
 ├── .gitignore
 ├── pom.xml
