@@ -59,33 +59,31 @@ Adjust element locators (e.g., XPaths) if the dashboard UI changes.
 Project Structure
 
 MercansTest/
-├── .idea/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── pages/
-│   │   │   │   ├── BasePage.java
-│   │   │   ├── DashboardPage.java
-│   │   │   └── LoginPage.java
-│   │   │
-│   │   └── utilities/
-│   │       └── ConfigReader.java
-│   │
-│   └── test/
-│       ├── java/
-│       │   ├── base/
-│       │   │   └── BaseTest.java
-│       │   └── tests/
-│       │       ├── DashboardTests.java
-│       │       └── LoginTests.java
-│       │
-│       └── resources/
-├── target/
-├── .env
-├── .gitignore
-├── pom.xml
-└── testng.xml
+    .idea/                      # IntelliJ project files (auto-generated)
+    src/
+        main/
+            java/
+                pages/          # Page object models
+                    BasePage.java   # Base class for page interactions
+                    DashboardPage.java # Dashboard navigation and filters
+                    LoginPage.java    # Login functionality
+                utilities/       # Utility classes
+                    ConfigReader.java # Reads configuration (e.g., URL, credentials)
+        test/
+            java/
+                base/           # Base test setup
+                    BaseTest.java    # Common setup/teardown for tests
+                tests/          # Test cases
+                    DashboardTests.java # Tests dashboard features
+                    LoginTests.java     # Tests login and logout
+            resources/         # Test resources (e.g., config files)
+    target/                     # Maven build output (auto-generated)
+    .env                        # Environment variables (e.g., URL, credentials)
+    .gitignore                  # Ignores IDE files and sensitive data
+    pom.xml                     # Maven configuration
+    testng.xml                  # TestNG suite configuration
 
+    
 Test Coverage
 •	Login: Ensures successful login and logout.
 •	Dashboard: Verifies navigation
