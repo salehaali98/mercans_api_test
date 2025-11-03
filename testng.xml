@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Mercans Automation Suite" parallel="false">
+
+    <test name="Login Test">
+        <classes>
+            <class name="tests.LoginTests"/>
+            <class name="tests.DashboardTests"/>
+        </classes>
+    </test>
+
+</suite>

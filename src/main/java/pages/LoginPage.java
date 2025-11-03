@@ -19,23 +19,24 @@ public class LoginPage extends BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void enterUsername() {
-        String username = ConfigReader.get("MYUSERNAME");
+    public void enterUsername(String MANAGERUSERNAME) {
+        String username = ConfigReader.get(MANAGERUSERNAME);
         System.out.println(username);
         wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField))
                 .sendKeys(username);
     }
 
-    public void enterPassword() {
-        String password = ConfigReader.get("PASSWORD");
+    public void enterPassword(String MANAGERPASSWORD ) {
+        String password = ConfigReader.get(MANAGERPASSWORD);
         System.out.println(password);
         wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField))
                 .sendKeys(password);
 
     }
 
-    public void clickLogin() {
+    public DashboardPage clickLogin() {
         wait.until(ExpectedConditions.elementToBeClickable(loginButton))
                 .click();
+        return new DashboardPage(driver);
     }
 }
