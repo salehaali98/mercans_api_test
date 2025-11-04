@@ -85,6 +85,9 @@ MercansTest/
 
     
 Test Coverage
+
 •	Login: Ensures successful login and logout.
+
 •	Dashboard: Verifies navigation
+
 •	View leave balance: Verifies If all leave details are displayed.
