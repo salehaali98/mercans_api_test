@@ -1,5 +1,7 @@
 Leave Management Dashboard Test Automation
+
 This project automates UI testing for a leave management dashboard using Selenium with Java. It covers login, dashboard navigation, and leave portal details for managers and employees.
+
 Prerequisites
 Before setting up the project, ensure you have the following installed:
 
